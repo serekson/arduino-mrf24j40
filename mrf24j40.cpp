@@ -491,7 +491,7 @@ void MRFClass::tx_assoc_resp(DeviceAddress dest_addr) {
   Serial.print("Join: ");
   printAddress(dest_addr);
   //memcpy(client_list[client_cnt], dest_addr, 8);
-  setAddress(&client_list[client_cnt].addr[0], &dest_addr);
+  setAddress(client_list[client_cnt].addr, dest_addr);
   client_list[client_cnt].time=millis();
   client_cnt++;
 
@@ -1098,7 +1098,7 @@ void MRFClass::printAddress(DeviceAddress a) {
 }
 
 // function to print a device address
-void MRFClass::setAddress(DeviceAddress* a, DeviceAddress* b) {
+void MRFClass::setAddress(byte* a, byte* b) {
   //memcpy(client_list[client_cnt], dest_addr, 8);
   //memcpy(a, b, 8);
 }

@@ -194,14 +194,14 @@ class MRFClass{
   //uint32_t client_time[MRF_MAX_CLIENTS];
   
   struct Client {
-    DeviceAddress addr;
-	uint32_t time;
+    byte            addr[8];
+	  uint32_t time;
   };
   
   struct Client client_list[MRF_MAX_CLIENTS];
   
   //void zeroAddress(DeviceAddress a);
-  void setAddress(DeviceAddress* a, DeviceAddress* b);
+  void setAddress(byte* a, byte* b);
   //bool compareAddress(DeviceAddress a, DeviceAddress b);
   void printAddress(DeviceAddress a);
   
